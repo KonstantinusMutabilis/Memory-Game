@@ -8,6 +8,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
     gap: 50px;
     background-image: url(./Images/background.jpg)
 }
@@ -67,7 +68,7 @@ h1 {
 .game {
     display: flex;
     gap: 20PX;
-    width: 100vh;
+    width: 85%;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
@@ -84,6 +85,13 @@ h1 {
 }
 
 
+
+.bgImage {
+    border-radius: 20px;
+
+    height: 200px;
+    width: 120px;
+}
 
 .cardback {
 
@@ -161,4 +169,26 @@ h1 {
 .dissapired {
     opacity: 0;
     pointer-events: none;
+}
+
+
+
+@media only screen and (max-width: 800px) {
+
+    .bgImage,
+    .card {
+
+        height: 100px;
+        width: 60px;
+        border-radius: 10px;
+    }
+
+
+    .cardback,
+    .cardfront {
+
+        border-radius: 10px;
+
+    }
+
 }

@@ -27,13 +27,9 @@ function CardsShuffle() {
         const bgimage = document.createElement('img');
         bgimage.setAttribute("src", "./Images/card-bg.jpg");
         bgimage.setAttribute("alt", " Card Background Image");
-        bgimage.setAttribute("alt", " Card Background Image");
-        bgimage.setAttribute("height", "200px");
-        bgimage.setAttribute("width", "120px");
-        bgimage.setAttribute("width", "120px");
-
-        bgimage.style.borderRadius = '20px';
         bgimage.style.objectFit = "cover";
+        bgimage.classList.add('bgImage');
+
 
 
         CardBack.appendChild(bgimage);
@@ -120,30 +116,30 @@ function NewGame() {
     function WinCheck() {
 
         const cards = document.querySelectorAll('.card');
-        console.log("check");
+
         let allNotVisible = true;
 
         cards.forEach(card => {
             const cardStyle = getComputedStyle(card);
             if (cardStyle.getPropertyValue('opacity') === '1') {
                 allNotVisible = false;
-                console.log(cardStyle.getPropertyValue('opacity'));
+                // console.log(cardStyle.getPropertyValue('opacity'));
                 return;
             }
         });
 
         if (allNotVisible) {
             alert('You win!');
-            console.log("win");
+
 
 
             removeAllChildNodes(GameDiv);
 
             GameSet();
         }
-        else {
-            console.log("not win");
-        }
+        // else {
+        //     console.log("not win");
+        // }
     }
 
 
@@ -152,7 +148,7 @@ function NewGame() {
 
     function GameCount(event) {
 
-        console.log("click");
+
 
 
 
@@ -181,7 +177,7 @@ function NewGame() {
             clickedCardfront2 = cardfront;
             clickedCard2 = card;
             if (clickedCardfront1.classList.toString() === clickedCardfront2.classList.toString()) {
-                console.log("Classes matched: " + clickedCardfront1.classList.toString());
+
                 clickedCardfront1.classList.add("right");
                 clickedCardfront2.classList.add("right");
 
@@ -220,7 +216,7 @@ function NewGame() {
 
             }
             else {
-                console.log(":P");
+
 
                 clickedCardfront1.classList.add("wrong");
                 clickedCardfront2.classList.add("wrong");
